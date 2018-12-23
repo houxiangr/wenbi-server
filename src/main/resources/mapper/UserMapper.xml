@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.houxiang.wenbiserver.mapper.UserMapper">
+
+    <!--int insertUser(User record);-->
+    <insert id="insertUser" parameterType="com.houxiang.wenbiserver.model.User">
+        insert into user (nickname,username,password)
+        values
+        (#{nickname,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
+    </insert>
+</mapper>
