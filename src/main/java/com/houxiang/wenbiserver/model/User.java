@@ -3,7 +3,7 @@ package com.houxiang.wenbiserver.model;
 public class User {
     private Integer id;
     private String nickname;
-    private String username;
+    private String phonenumber;
     private String password;
 
     public Integer getId() {
@@ -22,12 +22,12 @@ public class User {
         this.nickname = nickname.trim();
     }
 
-    public String getUsername() {
-        return username;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setUsername(String username) {
-        this.username = username.trim();
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public String getPassword() {

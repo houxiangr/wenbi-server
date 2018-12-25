@@ -4,8 +4,16 @@
 
     <!--int insertUser(User record);-->
     <insert id="insertUser" parameterType="com.houxiang.wenbiserver.model.User">
-        insert into user (nickname,username,password)
+        insert into user (nickname,phonenumber,password)
         values
-        (#{nickname,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
+        (#{nickname,jdbcType=VARCHAR},#{phonenumber,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
     </insert>
+    <!--int selectUseCountrByPhone(String phonenumber);-->
+    <select id="selectUseCountrByPhone" resultType="Integer">
+        select count(*) from user where phonenumber = #{phonenumber,jdbcType=VARCHAR}
+    </select>
+    <!--int matchThePhoneAndPassword(User user);-->
+    <select id="matchThePhoneAndPassword" parameterType="com.houxiang.wenbiserver.model.User" resultType="Integer">
+        select count(*) from user where phonenumber = #{phonenumber,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
+    </select>
 </mapper>
