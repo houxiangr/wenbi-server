@@ -1,6 +1,7 @@
 package com.houxiang.wenbiserver.service;
 
 import com.houxiang.wenbiserver.mapper.UserMapper;
+import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,14 @@ public class UserService {
     }
 
     public boolean isPhoneExist(String phoneNum) {
-        return userMapper.selectUseCountrByPhone(phoneNum) > 0;
+        return userMapper.selectUserCountrByPhone(phoneNum) > 0;
     }
 
-    public boolean isPasswordMatched(User user){
-        return userMapper.matchThePhoneAndPassword(user) == 1;
+    public SimpleUser isPasswordMatched(User user){
+        return userMapper.matchThePhoneAndPassword(user);
+    }
+
+    public User getUserDataByPhone(String phoneNum) {
+        return userMapper.selectUserDataByPhone(phoneNum);
     }
 }

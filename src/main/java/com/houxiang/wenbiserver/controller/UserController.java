@@ -1,9 +1,10 @@
 package com.houxiang.wenbiserver.controller;
 
 import com.houxiang.wenbiserver.dto.CommonMessage;
+import com.houxiang.wenbiserver.dto.UserDataDto;
+import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.model.User;
 import com.houxiang.wenbiserver.service.UserService;
-import com.houxiang.wenbiserver.stateEnum.IsLoginEnum;
 import com.houxiang.wenbiserver.stateEnum.LoginEnum;
 import com.houxiang.wenbiserver.stateEnum.RegisterEnum;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,9 +70,10 @@ public class UserController {
         if (!Pattern.matches("^1([34578])\\d{9}$", phonenumber)) {
             return new CommonMessage(false, LoginEnum.PHONEFORMATWRONG.getName());
         }
-        if (userService.isPasswordMatched(user)) {
+        SimpleUser userData = userService.isPasswordMatched(user);
+        if (userData != null) {
             // 写入session
-            httpSession.setAttribute("phone", phonenumber);
+            httpSession.setAttribute("userdata", userData);
             return new CommonMessage(true, LoginEnum.SUCCESS.getName());
         } else {
             return new CommonMessage(false, LoginEnum.ERROR.getName());
@@ -80,16 +82,16 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/isLogin",  produces = {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
-    public int CheckIsLogin(HttpSession httpSession,HttpServletResponse response){
+    public UserDataDto CheckIsLogin(HttpSession httpSession,HttpServletResponse response){
         //跨域解决方案
         response.setHeader("Access-Control-Allow-Credentials", "true");
         response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8081");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-        System.out.println(httpSession.getAttribute("phone"));
-        if(httpSession.getAttribute("phone") == null){
-            return IsLoginEnum.NOTLOGIN.getName();
+        SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
+        if(userData == null){
+            return new UserDataDto(false);
         }else{
-            return IsLoginEnum.LOGINED.getName();
+            return new UserDataDto(true,userData.getNickname());
         }
     }
 }

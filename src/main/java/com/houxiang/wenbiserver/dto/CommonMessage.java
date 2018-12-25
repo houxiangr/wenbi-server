@@ -1,5 +1,6 @@
 package com.houxiang.wenbiserver.dto;
 
+//普通信息格式，结果加信息中间数据结构
 public class CommonMessage {
     private boolean state;
     private String msg;
