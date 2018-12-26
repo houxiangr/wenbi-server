@@ -1,17 +1,17 @@
 package com.houxiang.wenbiserver.model;
 
 public class User {
-    private Integer id;
+    private Integer userId;
     private String nickname;
     private String phonenumber;
     private String password;
 
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getNickname() {

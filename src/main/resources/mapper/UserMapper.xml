@@ -14,10 +14,10 @@
     </select>
     <!--SimpleUser matchThePhoneAndPassword(User user);-->
     <select id="matchThePhoneAndPassword" parameterType="com.houxiang.wenbiserver.model.User" resultType="com.houxiang.wenbiserver.model.SimpleUser">
-        select id,nickname from user where phonenumber = #{phonenumber,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
+        select user_id,nickname from user where phonenumber = #{phonenumber,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
     </select>
     <!--User selectUserDataByPhone(String phonenumber);-->
     <select id="selectUserDataByPhone" resultType="com.houxiang.wenbiserver.model.User">
-        select id,nickname from user where phonenumber = #{phonenumber,jdbcType=VARCHAR}
+        select user_id,nickname from user where phonenumber = #{phonenumber,jdbcType=VARCHAR}
     </select>
 </mapper>

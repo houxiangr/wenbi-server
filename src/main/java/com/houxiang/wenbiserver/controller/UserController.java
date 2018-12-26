@@ -58,9 +58,7 @@ public class UserController {
     @RequestMapping(value = "/login", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
     public CommonMessage login(User user, HttpServletResponse response, HttpSession httpSession) {
         //跨域解决方案
-        response.setHeader("Access-Control-Allow-Credentials", "true");
-        response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8081");
-        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+        solveCrossDomain(response);
         String phonenumber = user.getPhonenumber();
         String password = user.getPassword();
         if (phonenumber.equals("") || password.equals("")) {
@@ -72,6 +70,7 @@ public class UserController {
         }
         SimpleUser userData = userService.isPasswordMatched(user);
         if (userData != null) {
+            userData.setPhonenumber(phonenumber);
             // 写入session
             httpSession.setAttribute("userdata", userData);
             return new CommonMessage(true, LoginEnum.SUCCESS.getName());
@@ -82,16 +81,27 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/isLogin",  produces = {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
-    public UserDataDto CheckIsLogin(HttpSession httpSession,HttpServletResponse response){
-        //跨域解决方案
-        response.setHeader("Access-Control-Allow-Credentials", "true");
-        response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8081");
-        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+    public UserDataDto checkIsLogin(HttpSession httpSession,HttpServletResponse response){
+        solveCrossDomain(response);
         SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
         if(userData == null){
             return new UserDataDto(false);
         }else{
             return new UserDataDto(true,userData.getNickname());
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/exitLogin", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
+    public void exitLogin(HttpSession httpSession,HttpServletResponse response){
+        solveCrossDomain(response);
+        httpSession.removeAttribute("userdata");
+    }
+
+    private void solveCrossDomain(HttpServletResponse response){
+        //跨域解决方案
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8081");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
     }
 }
