@@ -6,10 +6,12 @@ public class Essay {
 
     private Integer essayId;
     private Integer authorId;
+    private String authorName;
     private String essayTitle;
     private String essayContent;
     private Timestamp essayDate;
     private short essayState;
+    private String essayCover;
 
 
     public Integer getEssayId() {
@@ -58,5 +60,21 @@ public class Essay {
 
     public void setEssayState(short essayState) {
         this.essayState = essayState;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getEssayCover() {
+        return essayCover;
+    }
+
+    public void setEssayCover(String essayCover) {
+        this.essayCover = essayCover;
     }
 }
