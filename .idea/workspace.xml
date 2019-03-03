@@ -2,41 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e9ed4e-13e3-4ff4-8200-43808b04d960" name="Default Changelist" comment="make the add essayview and add the img upload">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T123838.404.json" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T123838.404.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T123952.200.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T123952.200.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T124006.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T124006.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T124154.404.json" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T124154.404.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T124211.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-12-23T124211.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/WenbiserverApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/WenbiserverApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/config/UploadFilePathConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/config/UploadFilePathConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/controller/EssayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/controller/EssayController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/dto/CommonMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/dto/CommonMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/dto/UserDataDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/dto/UserDataDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/mapper/EssayMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/mapper/EssayMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/model/Essay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/model/Essay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/model/SimpleUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/model/SimpleUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/service/EssayService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/service/EssayService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/EssayAddEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/EssayAddEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/EssayState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/EssayState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/LoginEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/LoginEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/RegisterEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/houxiang/wenbiserver/stateEnum/RegisterEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -68,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/WenbiserverApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="171">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#380#381#0" expanded="true" />
@@ -89,27 +61,102 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="114" column="6" selection-start-line="114" selection-start-column="6" selection-end-line="114" selection-end-column="6" />
+            <state relative-caret-position="195">
+              <caret line="71" column="17" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/CommentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/SimpleUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="34" selection-start-line="34" selection-end-line="38" />
+              <folding>
+                <element signature="e#826#827#0" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/wenbiserver.iml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#602#603#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
+                <element signature="e#719#720#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/mapper/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/Comment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+              <folding>
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#496#497#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/config/UploadFilePathConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -131,6 +178,7 @@
       <find>selectUserCountByPhone</find>
       <find>matchThePhoneAndPassword</find>
       <find>uploadFolder</find>
+      <find>`</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,21 +208,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/SimpleUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/config/UploadFileConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/dto/CommentsMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/Comment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/Essay.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/EssayController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/stateEnum/CommentAddEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/CommentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/service/CommentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/mapper/CommentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" />
         <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/Comment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/SimpleUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -235,7 +283,49 @@
             <path>
               <item name="wenbiserver" type="b2602c69:ProjectViewProjectNode" />
               <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wenbiserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wenbiserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wenbiserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wenbiserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wenbiserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wenbiserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wenbiserver" type="462c0819:PsiDirectoryNode" />
+              <item name="uploaded" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -252,7 +342,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551586785197" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551589036338" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../wenbifront" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -441,7 +531,8 @@
       <workItem from="1550973569376" duration="9154000" />
       <workItem from="1551009617092" duration="980000" />
       <workItem from="1551585381667" duration="755000" />
-      <workItem from="1551586151871" duration="621000" />
+      <workItem from="1551586151871" duration="1868000" />
+      <workItem from="1551588048123" duration="942000" />
     </task>
     <task id="LOCAL-00001" summary="make the framework">
       <created>1545479552999</created>
@@ -524,7 +615,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142239000" />
+    <option name="totallyTimeSpent" value="144428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,9 +628,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2580429" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2613941" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -549,13 +639,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30736545" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3371105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32719547" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32719547" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.35410765" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.35410765" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32719547" />
@@ -621,26 +711,6 @@
     <entry file="file://$PROJECT_DIR$/uploaded/upload_4770fb66_172e_49ca_9e4b_cb9aaabb943e_00000001.tmp" />
     <entry file="file://$PROJECT_DIR$/uploaded/upload_fb831f2e_b735_48cd_bf05_bf9b5a46321f_00000000.tmp" />
     <entry file="file://$PROJECT_DIR$/uploaded/upload_fb831f2e_b735_48cd_bf05_bf9b5a46321f_00000002.tmp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/config/UploadFileConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/config/UploadFilePathConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/dto/UserDataDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -648,30 +718,6 @@
           <folding>
             <element signature="e#330#331#0" expanded="true" />
             <element signature="e#374#375#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#719#720#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -743,27 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/SimpleUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="50" column="36" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -801,23 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/CommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -839,13 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -883,13 +884,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/wenbiserver.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/wenbiserver.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
@@ -899,15 +900,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/config/UploadFileConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/config/UploadFilePathConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="71" column="17" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/model/SimpleUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="34" selection-start-line="34" selection-end-line="38" />
+          <folding>
+            <element signature="e#826#827#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/houxiang/wenbiserver/WenbiserverApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#380#381#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
