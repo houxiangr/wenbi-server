@@ -8,6 +8,7 @@ import com.houxiang.wenbiserver.service.UserService;
 import com.houxiang.wenbiserver.stateEnum.LoginEnum;
 import com.houxiang.wenbiserver.stateEnum.RegisterEnum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;

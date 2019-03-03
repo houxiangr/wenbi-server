@@ -17,7 +17,7 @@ public class UserService {
     }
 
     public boolean isPhoneExist(String phoneNum) {
-        return userMapper.selectUserCountrByPhone(phoneNum) > 0;
+        return userMapper.selectUserCountByPhone(phoneNum) > 0;
     }
 
     public SimpleUser isPasswordMatched(User user){

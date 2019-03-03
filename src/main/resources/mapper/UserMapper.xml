@@ -8,8 +8,8 @@
         values
         (#{nickname,jdbcType=VARCHAR},#{phonenumber,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
     </insert>
-    <!--int selectUserCountrByPhone(String phonenumber);-->
-    <select id="selectUseCountrByPhone" resultType="Integer">
+    <!--int selectUserCountByPhone(String phonenumber);-->
+    <select id="selectUserCountByPhone" resultType="Integer">
         select count(*) from user where phonenumber = #{phonenumber,jdbcType=VARCHAR}
     </select>
     <!--SimpleUser matchThePhoneAndPassword(User user);-->

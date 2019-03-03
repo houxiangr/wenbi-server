@@ -11,6 +11,8 @@ public class SimpleUser {
         this.nickname = nickname;
     }
 
+    public SimpleUser(){}
+
     public Integer getUserId() {
         return userId;
     }
@@ -33,5 +35,10 @@ public class SimpleUser {
 
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
+    }
+
+    @Override
+    public String toString() {
+        return this.nickname+this.userId;
     }
 }

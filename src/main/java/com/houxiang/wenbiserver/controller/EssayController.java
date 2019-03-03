@@ -8,8 +8,6 @@ import com.houxiang.wenbiserver.stateEnum.EssayAddEnum;
 import com.houxiang.wenbiserver.stateEnum.EssayState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.util.ResourceUtils;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Map;
@@ -83,7 +80,7 @@ public class EssayController {
         if(essayService.addEssay(essay)){
             return new CommonMessage(true, EssayAddEnum.SUCCESS.getName());
         }else{
-            return new CommonMessage(true, EssayAddEnum.ERROR.getName());
+            return new CommonMessage(false, EssayAddEnum.ERROR.getName());
         }
     }
 
@@ -91,6 +88,8 @@ public class EssayController {
     @RequestMapping(value="/viewEssay", produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
     public Essay viewEssay(@RequestBody Map<String, Object> map) {
         int essid = Integer.parseInt((String) map.get("essid"));
-        return essayService.searchEssayByEssayId(essid);
+        Essay temp = essayService.searchEssayByEssayId(essid);
+        System.out.println(temp);
+        return temp;
     }
 }

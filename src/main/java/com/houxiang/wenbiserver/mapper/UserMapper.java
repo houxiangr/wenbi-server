@@ -9,7 +9,7 @@ public interface UserMapper {
     int insertUser(User record);
 
     // 通过电话号码查询当前电话账户数量
-    int selectUserCountrByPhone(String phonenumber);
+    int selectUserCountByPhone(String phonenumber);
 
     //比对登陆手机号和密码
     SimpleUser matchThePhoneAndPassword(User user);

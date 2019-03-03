@@ -1,18 +1,23 @@
 server:
   port: 8081
 mybatis:
-  type-aliases-package: com.houxiang.webbiserver.model
+  type-aliases-package: com.houxiang.wenbiserver.model
   mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/wenbi?characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/wenbi?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: 123456789
+    password: 123
     driverClassName: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 file:
   staticAccessPath: /api/file/**
-  uploadFolder: /Users/houxiangrui/houProjects/wenbiserver/uploaded
+  uploadFolder: D:\gitproject\wenbiserver\uploaded
 myconfig:
   domain: localhost:8081
   getimginterface: /api/file/uploaded/
+logging:
+  level:
+    com.houxiang.wenbiserver.mapper: debug

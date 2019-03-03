@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.houxiang.wenbiserver.mapper.CommentMapper">
+
+    <!--public List<Comment> getCommentsByPos(@Param("essayid") int essayid,@Param("start")int start,
+    @Param("end")int end, @Param("commentCount")int commentCount,@Param("startpos") int startpos);-->
+    <select id="getCommentsByPos" resultType="com.houxiang.wenbiserver.model.Comment">
+        select co.comment_id,co.comment_content,co.comment_date,co.support_num,us.nickname as author_name
+        from comment as co join user as us on co.author_id = us.user_id where send_pos &gt;= #{start,jdbcType=INTEGER}
+        and send_pos &lt;= #{end,jdbcType=INTEGER} and essay_id = #{essayid,jdbcType=INTEGER}
+        order by support_num asc limit #{startpos,jdbcType=INTEGER},#{commentCount,jdbcType=INTEGER}
+    </select>
+
+    <!--public int addComment(Comment comment);-->
+    <insert id="addComment" parameterType="com.houxiang.wenbiserver.model.Comment">
+        insert into comment (essay_id,send_pos,comment_content,comment_date,author_id)values(#{essayId,jdbcType=INTEGER},#{sendPos,jdbcType=INTEGER},#{commentContent,jdbcType=VARCHAR},#{commentDate,jdbcType=TIMESTAMP},#{authorId,jdbcType=INTEGER})
+    </insert>
+</mapper>
