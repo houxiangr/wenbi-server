@@ -24,4 +24,15 @@ public class CommentService {
     public boolean addComment(Comment comment){
         return commentMapper.addComment(comment) == 1;
     }
+
+
+    //评论点赞
+    public boolean upComment(Integer commentId){
+        return commentMapper.upComment(commentId) == 1;
+    }
+
+    //添加用户点赞关联消息
+    public boolean addUpAuthor(Integer commentId,Integer userId){
+        return commentMapper.addUpAuthor(commentId,userId) == 1;
+    }
 }

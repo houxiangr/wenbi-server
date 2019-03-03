@@ -11,6 +11,15 @@ public class Comment {
     private Timestamp commentDate;
     private Integer supportNum;
     private String authorName;
+    private Integer isThumbsUp;
+
+    public Integer getThumbsUp() {
+        return isThumbsUp;
+    }
+
+    public void setThumbsUp(Integer thumbsUp) {
+        isThumbsUp = thumbsUp;
+    }
 
     public Integer getAuthorId() {
         return authorId;

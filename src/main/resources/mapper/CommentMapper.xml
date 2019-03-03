@@ -5,7 +5,8 @@
     <!--public List<Comment> getCommentsByPos(@Param("essayid") int essayid,@Param("start")int start,
     @Param("end")int end, @Param("commentCount")int commentCount,@Param("startpos") int startpos);-->
     <select id="getCommentsByPos" resultType="com.houxiang.wenbiserver.model.Comment">
-        select co.comment_id,co.comment_content,co.comment_date,co.support_num,us.nickname as author_name
+        select co.comment_id,co.comment_content,co.comment_date,co.support_num,us.nickname as author_name,
+        (select count(*) from author_comment where comment_id = co.comment_id and user_id = us.user_id) as isThumbsUp
         from comment as co join user as us on co.author_id = us.user_id where send_pos &gt;= #{start,jdbcType=INTEGER}
         and send_pos &lt;= #{end,jdbcType=INTEGER} and essay_id = #{essayid,jdbcType=INTEGER}
         order by support_num asc limit #{startpos,jdbcType=INTEGER},#{commentCount,jdbcType=INTEGER}
@@ -14,5 +15,15 @@
     <!--public int addComment(Comment comment);-->
     <insert id="addComment" parameterType="com.houxiang.wenbiserver.model.Comment">
         insert into comment (essay_id,send_pos,comment_content,comment_date,author_id)values(#{essayId,jdbcType=INTEGER},#{sendPos,jdbcType=INTEGER},#{commentContent,jdbcType=VARCHAR},#{commentDate,jdbcType=TIMESTAMP},#{authorId,jdbcType=INTEGER})
+    </insert>
+
+    <!--public int upComment(@Param("commentId") int commentId);-->
+    <update id="upComment">
+        update comment set support_num = support_num+1 where comment_id = #{commentId,jdbcType=INTEGER}
+    </update>
+
+    <!--public int addUpAuthor(@Param("commentId") int commentId,@Param("userId") int userId);-->
+    <insert id="addUpAuthor">
+        insert into author_comment (comment_id,user_id)values(#{commentId,jdbcType=INTEGER},#{userId,jdbcType=INTEGER})
     </insert>
 </mapper>

@@ -7,6 +7,7 @@ import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.service.CommentService;
 import com.houxiang.wenbiserver.stateEnum.CommentAddEnum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -60,6 +61,25 @@ public class CommentController {
             return new CommonMessage(true, CommentAddEnum.SUCCESS.getName());
         }else{
             return new CommonMessage(false, CommentAddEnum.ERROR.getName());
+        }
+    }
+
+    //评论点赞
+    @ResponseBody
+    @RequestMapping(value = "upComment",produces = {"application/json;charset=UTF-8"},method=RequestMethod.POST)
+    @Transactional
+    public CommonMessage upComment(HttpSession httpSession,HttpServletRequest request){
+        int commentId = Integer.parseInt(request.getParameter("commentId"));
+        SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
+        if(userData == null){
+            return new CommonMessage(false);
+        }
+        commentService.addUpAuthor(commentId,userData.getUserId());
+        System.out.println("test");
+        if(commentService.upComment(commentId)){
+            return new CommonMessage(true);
+        }else{
+            return new CommonMessage(false);
         }
     }
 }

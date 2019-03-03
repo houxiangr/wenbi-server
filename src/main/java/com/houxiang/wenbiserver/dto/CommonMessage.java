@@ -10,6 +10,10 @@ public class CommonMessage {
         this.msg = msg;
     }
 
+    public CommonMessage(boolean state) {
+        this.state = state;
+    }
+
     public boolean isState() {
         return state;
     }
