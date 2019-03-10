@@ -4,6 +4,7 @@ import com.houxiang.wenbiserver.dto.CommonMessage;
 import com.houxiang.wenbiserver.model.Essay;
 import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.service.EssayService;
+import com.houxiang.wenbiserver.stateEnum.CommentEnum;
 import com.houxiang.wenbiserver.stateEnum.EssayAddEnum;
 import com.houxiang.wenbiserver.stateEnum.EssayState;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,10 +87,32 @@ public class EssayController {
 
     @ResponseBody
     @RequestMapping(value="/viewEssay", produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
-    public Essay viewEssay(@RequestBody Map<String, Object> map) {
+    public Essay viewEssay(HttpSession httpSession,@RequestBody Map<String, Object> map) {
         int essid = Integer.parseInt((String) map.get("essid"));
-        Essay temp = essayService.searchEssayByEssayId(essid);
-        System.out.println(temp);
+        int userId;
+        SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
+        if(userData == null){
+            userId = -1;
+        }else{
+            userId = userData.getUserId();
+        }
+        Essay temp = essayService.searchEssayByEssayId(essid,userId);
         return temp;
+    }
+
+    //文章收藏
+    @ResponseBody
+    @RequestMapping(value="/collectEssay", produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
+    public CommonMessage collectEssay(HttpSession httpSession,HttpServletRequest request){
+        int essayId = Integer.parseInt(request.getParameter("essayId"));
+        SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
+        if(userData == null){
+            return new CommonMessage(false, CommentEnum.FAIL.getName());
+        }
+        if(essayService.collectEssay(essayId,userData.getUserId())){
+            return new CommonMessage(false, CommentEnum.SUCCESS.getName());
+        }else{
+            return new CommonMessage(false, CommentEnum.FAIL.getName());
+        }
     }
 }

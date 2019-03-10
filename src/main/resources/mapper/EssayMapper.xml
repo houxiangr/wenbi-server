@@ -22,7 +22,13 @@
         essay_author as authorId,
         essay_title as essayTitle,
         essay_content as essayContent,
-        essay_date as essayDate
+        essay_date as essayDate,
+        (select count(*) from user_collect_essay where essay_id = essay.essay_id and user_id = #{userId,jdbcType=INTEGER}) as isCollect
         from essay join user on essay.essay_author=user.user_id where essay_id=#{essayId,jdbcType=INTEGER} and essay_state=2
     </select>
+
+    <!--public int collectEssay(@Param("essayId") int essayId,@Param("userId") int userId);-->
+    <insert id="collectEssay">
+        insert user_collect_essay (user_id,essay_id)values(#{essayId,jdbcType=INTEGER},#{userId,jdbcType=INTEGER})
+    </insert>
 </mapper>

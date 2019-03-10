@@ -23,8 +23,13 @@ public class EssayService {
     }
 
     // 通过文章id查找文章详细信息
-    public Essay searchEssayByEssayId(int essayId){
-        return essayMapper.selectEssayByEssayId(essayId);
+    public Essay searchEssayByEssayId(int essayId,int userId){
+        return essayMapper.selectEssayByEssayId(essayId,userId);
+    }
+
+    //收藏文章
+    public boolean collectEssay(int essayId,int userId){
+        return essayMapper.collectEssay(essayId,userId) == 1;
     }
 
 }

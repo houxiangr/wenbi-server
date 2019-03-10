@@ -12,5 +12,8 @@ public interface EssayMapper {
     public int selectEssayByAuthorIdAndEssayTitle(@Param("authorId") int authorId,@Param("essayTitle") String essayTitle);
 
     //通过文章id查询文章信息
-    public Essay selectEssayByEssayId(@Param("essayId") int essayId);
+    public Essay selectEssayByEssayId(@Param("essayId") int essayId,@Param("userId") int userId);
+
+    //收藏文章
+    public int collectEssay(@Param("essayId") int essayId,@Param("userId") int userId);
 }

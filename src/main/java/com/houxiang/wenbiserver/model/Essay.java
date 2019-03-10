@@ -12,7 +12,15 @@ public class Essay {
     private Timestamp essayDate;
     private short essayState;
     private String essayCover;
+    private Integer isCollect;
 
+    public Integer getIsCollect() {
+        return isCollect;
+    }
+
+    public void setIsCollect(Integer isCollect) {
+        this.isCollect = isCollect;
+    }
 
     public Integer getEssayId() {
         return essayId;
