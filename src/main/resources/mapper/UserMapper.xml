@@ -20,4 +20,6 @@
     <select id="selectUserDataByPhone" resultType="com.houxiang.wenbiserver.model.User">
         select user_id,nickname from user where phonenumber = #{phonenumber,jdbcType=VARCHAR}
     </select>
+
+
 </mapper>

@@ -1,8 +1,9 @@
 package com.houxiang.wenbiserver.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
-public class Essay {
+public class Essay implements Comparable<Essay> {
 
     private Integer essayId;
     private Integer authorId;
@@ -13,6 +14,25 @@ public class Essay {
     private short essayState;
     private String essayCover;
     private Integer isCollect;
+    private Integer visitCount;
+    private Integer collectCount;
+
+
+    public Integer getVisitCount() {
+        return visitCount;
+    }
+
+    public void setVisitCount(Integer visitCount) {
+        this.visitCount = visitCount;
+    }
+
+    public Integer getCollectCount() {
+        return collectCount;
+    }
+
+    public void setCollectCount(Integer collectCount) {
+        this.collectCount = collectCount;
+    }
 
     public Integer getIsCollect() {
         return isCollect;
@@ -84,5 +104,30 @@ public class Essay {
 
     public void setEssayCover(String essayCover) {
         this.essayCover = essayCover;
+    }
+
+    @Override
+    public int compareTo(Essay obj) {
+        if(obj.collectCount*0.7+obj.visitCount*0.3>collectCount*0.7+visitCount*0.3){
+            return -1;
+        }else{
+            return 1;
+        }
+    }
+    @Override
+    public String toString() {
+        return "Essay{" +
+                "essayId=" + essayId +
+                ", authorId=" + authorId +
+                ", authorName='" + authorName + '\'' +
+                ", essayTitle='" + essayTitle + '\'' +
+                ", essayContent='" + essayContent + '\'' +
+                ", essayDate=" + essayDate +
+                ", essayState=" + essayState +
+                ", essayCover='" + essayCover + '\'' +
+                ", isCollect=" + isCollect +
+                ", visitCount=" + visitCount +
+                ", collectCount=" + collectCount +
+                '}';
     }
 }

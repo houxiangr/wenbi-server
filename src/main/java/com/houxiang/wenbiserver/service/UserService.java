@@ -1,10 +1,13 @@
 package com.houxiang.wenbiserver.service;
 
 import com.houxiang.wenbiserver.mapper.UserMapper;
+import com.houxiang.wenbiserver.model.Essay;
 import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -27,4 +30,6 @@ public class UserService {
     public User getUserDataByPhone(String phoneNum) {
         return userMapper.selectUserDataByPhone(phoneNum);
     }
+
+
 }

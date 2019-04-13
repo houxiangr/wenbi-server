@@ -1,7 +1,10 @@
 package com.houxiang.wenbiserver.mapper;
 
+import com.houxiang.wenbiserver.model.Essay;
 import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.model.User;
+
+import java.util.List;
 
 public interface UserMapper {
 

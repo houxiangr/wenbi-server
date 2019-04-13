@@ -3,7 +3,7 @@
 <mapper namespace="com.houxiang.wenbiserver.mapper.EssayMapper">
 
     <!--public int insertEssay(Essay essay);-->
-    <insert id="insertEssay" parameterType="com.houxiang.wenbiserver.model.Essay">
+    <insert id="insertEssay" parameterType="com.houxiang.wenbiserver.model.Essay" useGeneratedKeys="true" keyProperty="essayId">
         insert into essay (essay_author,essay_title,essay_content,essay_date,essay_state,essay_cover)
         values (#{authorId,jdbcType=INTEGER},#{essayTitle,jdbcType=VARCHAR},#{essayContent,jdbcType=VARCHAR},
         #{essayDate,jdbcType=TIMESTAMP},#{essayState,jdbcType=INTEGER},#{essayCover,jdbcType=VARCHAR})
@@ -29,6 +29,34 @@
 
     <!--public int collectEssay(@Param("essayId") int essayId,@Param("userId") int userId);-->
     <insert id="collectEssay">
-        insert user_collect_essay (user_id,essay_id)values(#{essayId,jdbcType=INTEGER},#{userId,jdbcType=INTEGER})
+        insert user_collect_essay (user_id,essay_id)values(#{userId,jdbcType=INTEGER},#{essayId,jdbcType=INTEGER})
     </insert>
+
+    <!--List<Essay> getCollectEssayByUserId(int userId);-->
+    <select id="getCollectEssayByUserId" resultType="com.houxiang.wenbiserver.model.Essay">
+        select es.essay_id,es.essay_title,es.essay_date,es.essay_cover from user_collect_essay as uses join essay as es
+        where uses.user_id = #{userId,jdbcType=INTEGER} and uses.essay_id = es.essay_id
+    </select>
+
+    <!--List<Essay> getCreateEssayByUserId(int userId);-->
+    <select id="getCreateEssayByUserId" resultType="com.houxiang.wenbiserver.model.Essay">
+        select essay_id,essay_title,essay_content,essay_date,essay_cover from essay
+        where essay_author = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <!--List<Essay> getLastTenEssay();-->
+    <select id="getLastTenEssay" resultType="com.houxiang.wenbiserver.model.Essay">
+        select essay_id,essay_title from essay order by essay_date desc limit 10
+    </select>
+
+    <!--public int addVisitCount(int essayId);-->
+    <update id = "addVisitCount">
+        update essay set visit_count=visit_count+1 where essay_id = #{essayId,jdbcType=INTEGER}
+    </update>
+
+    <!--public List<Essay> getHotEssay();-->
+    <select id="getHotEssayData" resultType="com.houxiang.wenbiserver.model.Essay">
+        select es.essay_id,es.essay_title,es.visit_count,(select count(*) from user_collect_essay where essay_id = es.essay_id) as collect_count
+        from essay as es order by essay_date desc limit 10000
+    </select>
 </mapper>

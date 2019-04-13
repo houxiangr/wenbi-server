@@ -1,7 +1,9 @@
 package com.houxiang.wenbiserver.controller;
 
 import com.houxiang.wenbiserver.dto.CommonMessage;
+import com.houxiang.wenbiserver.dto.EssaysDto;
 import com.houxiang.wenbiserver.dto.UserDataDto;
+import com.houxiang.wenbiserver.model.Essay;
 import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.model.User;
 import com.houxiang.wenbiserver.service.UserService;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.regex.Pattern;
 
 @RestController
@@ -105,4 +108,6 @@ public class UserController {
         response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8081");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
     }
+
+
 }

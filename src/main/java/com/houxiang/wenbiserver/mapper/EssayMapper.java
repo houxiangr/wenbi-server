@@ -3,6 +3,8 @@ package com.houxiang.wenbiserver.mapper;
 import com.houxiang.wenbiserver.model.Essay;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface EssayMapper {
 
     //增加一篇文章
@@ -16,4 +18,19 @@ public interface EssayMapper {
 
     //收藏文章
     public int collectEssay(@Param("essayId") int essayId,@Param("userId") int userId);
+
+    //通过UserId获取用户收藏的文章
+    public List<Essay> getCollectEssayByUserId(@Param("userId")int userId);
+
+    //通过UserId获得用户创造的文章
+    public List<Essay> getCreateEssayByUserId(@Param("userId")int userId);
+
+    //获取最新10篇文章
+    public List<Essay> getLastTenEssay();
+
+    //递增访问次数
+    public int addVisitCount(@Param("essayId") int essayId);
+
+    //查询最近10000篇文章内的访问数和收藏数
+    public List<Essay> getHotEssayData();
 }

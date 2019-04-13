@@ -75,7 +75,6 @@ public class CommentController {
             return new CommonMessage(false);
         }
         commentService.addUpAuthor(commentId,userData.getUserId());
-        System.out.println("test");
         if(commentService.upComment(commentId)){
             return new CommonMessage(true);
         }else{

@@ -16,7 +16,7 @@ file:
   staticAccessPath: /api/file/**
   uploadFolder: D:\gitproject\wenbiserver\uploaded
 myconfig:
-  domain: localhost:8081
+  domain: http://localhost:8081
   getimginterface: /api/file/uploaded/
 logging:
   level:
