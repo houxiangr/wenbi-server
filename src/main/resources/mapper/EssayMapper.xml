@@ -59,4 +59,12 @@
         select es.essay_id,es.essay_title,es.visit_count,(select count(*) from user_collect_essay where essay_id = es.essay_id) as collect_count
         from essay as es order by essay_date desc limit 10000
     </select>
+
+    <!--public List<Essay> getEssayByEssayIdList(@Param("essayids") List<Integer> essayIds);-->
+    <select id="getEssayByEssayIdList" resultType="com.houxiang.wenbiserver.model.Essay">
+      select essay_id,essay_title,essay_date,essay_cover,visit_count from essay where essay_id in
+        <foreach collection="essayids" index="index" item="essayId" open="(" separator="," close=")">
+            #{essayId}
+        </foreach>
+    </select>
 </mapper>

@@ -12,6 +12,8 @@ spring:
     password: 123
     driverClassName: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  hadoop:
+    fsUri: hdfs://192.168.42.132:9000
 file:
   staticAccessPath: /api/file/**
   uploadFolder: D:\gitproject\wenbiserver\uploaded

@@ -33,4 +33,7 @@ public interface EssayMapper {
 
     //查询最近10000篇文章内的访问数和收藏数
     public List<Essay> getHotEssayData();
+
+    //通过文章id List获取文章列表
+    public List<Essay> getEssayByEssayIdList(@Param("essayids") Integer[] essayIds);
 }

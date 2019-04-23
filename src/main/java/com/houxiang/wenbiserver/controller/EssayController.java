@@ -9,6 +9,11 @@ import com.houxiang.wenbiserver.service.EssayService;
 import com.houxiang.wenbiserver.stateEnum.CommentEnum;
 import com.houxiang.wenbiserver.stateEnum.EssayAddEnum;
 import com.houxiang.wenbiserver.stateEnum.EssayState;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataInputStream;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.apache.http.entity.ContentType;
 import org.apache.http.nio.entity.NStringEntity;
 import org.apache.http.util.EntityUtils;
@@ -19,6 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.hadoop.fs.FsShell;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,6 +40,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -71,7 +79,7 @@ public class EssayController {
     @ResponseBody
     @RequestMapping(value="/addEssay", produces = {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
     // 接受上传的文件 @RequestParam("essay-cover") MultipartFile essayCover
-    public CommonMessage addEssay(Essay essay, HttpSession httpSession, HttpServletRequest req, @RequestParam("essay-cover") MultipartFile essayCover) throws IOException {
+    public CommonMessage addEssay(Essay essay, HttpSession httpSession, HttpServletRequest req, @RequestParam("essay-cover") MultipartFile essayCover) throws IOException, URISyntaxException {
         SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
         if(userData == null){
             return new CommonMessage(false, EssayAddEnum.NOTLOGIN.getName());
@@ -112,6 +120,11 @@ public class EssayController {
             if(res.getStatusCode()!=HttpStatus.OK){
                 System.out.println("数据添加ES失败，原因："+res.toString());
             }
+            try{
+                appendUserAction(authorId,essay.getEssayId(),5);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             return new CommonMessage(true, EssayAddEnum.SUCCESS.getName());
         }else{
             return new CommonMessage(false, EssayAddEnum.ERROR.getName());
@@ -129,9 +142,15 @@ public class EssayController {
         }else{
             userId = userData.getUserId();
         }
+        try{
+            appendUserAction(userId,essid,2);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         if(!essayService.addVisitCount(essid)){
             System.out.println("访问计数错误");
         }
+
         return essayService.searchEssayByEssayId(essid,userId);
     }
 
@@ -143,6 +162,11 @@ public class EssayController {
         SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
         if(userData == null){
             return new CommonMessage(false, CommentEnum.FAIL.getName());
+        }
+        try{
+            appendUserAction(userData.getUserId(),essayId,8);
+        }catch (Exception e){
+            e.printStackTrace();
         }
         if(essayService.collectEssay(essayId,userData.getUserId())){
             return new CommonMessage(false, CommentEnum.SUCCESS.getName());
@@ -206,11 +230,28 @@ public class EssayController {
     }
 
     //关键词文章搜索
+    @ResponseBody
     @RequestMapping(value="/searchEssay",produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
     public EssaysDto searchEssayFromEs(HttpServletRequest request) throws IOException, ParseException {
         String matchStr = request.getParameter("matchStr");
         //System.out.println(matchStr);
         return matchEssay(matchStr);
+    }
+
+    //获取文章智能推荐结果
+    @ResponseBody
+    @RequestMapping(value="/intelligentEssay",produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
+    public EssaysDto intelligentRecommendEssay(HttpSession httpSession){
+        SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
+        if(userData == null){
+            return new EssaysDto("not login", false);
+        }
+        List<Essay> essays = essayService.getRecommendEssays(userData.getUserId());
+        if(essays != null){
+            return new EssaysDto(essays,"ok",true);
+        }else{
+            return new EssaysDto("select essay error", false);
+        }
     }
 
     //添加文章到ES数据库中
@@ -270,6 +311,62 @@ public class EssayController {
             essays.add(tempEssay);
         }
         return new EssaysDto(essays,"查询成功",true);
+    }
+
+    //往Hadoop中追加用户操作记录
+    private void appendUserAction(int userId,int essayID,int score) throws IOException, URISyntaxException {
+        System.out.println("=========run start============");
+        if(userId <= 0){
+            return;
+        }
+        FileSystem fs = null;
+        FSDataOutputStream out = null;
+        try{
+            Configuration conf = new Configuration();
+            conf.set("dfs.support.append", "true");
+            conf.set("dfs.client.block.write.replace-datanode-on-failure.policy", "NEVER");
+            conf.set("dfs.client.block.write.replace-datanode-on-failure.enable", "true");
+            fs = FileSystem.get(new URI("hdfs://192.168.42.132:9000"),conf);
+            out = fs.append(new Path("/itemCF/step1_input/UserAction.txt"));
+            out.write(("\n"+userId+","+essayID+","+score).getBytes());
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if(fs != null){
+                fs.close();
+            }
+            if(out != null){
+                out.close();
+            }
+        }
+        System.out.println("===========run end===========");
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/appendTest",produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
+    private void appendUserActionTest() throws IOException, URISyntaxException {
+        System.out.println("=========run start============");
+        FileSystem fs = null;
+        FSDataOutputStream out = null;
+        try{
+            Configuration conf = new Configuration();
+            conf.set("dfs.support.append", "true");
+            conf.set("dfs.client.block.write.replace-datanode-on-failure.policy", "NEVER");
+            conf.set("dfs.client.block.write.replace-datanode-on-failure.enable", "true");
+            fs = FileSystem.get(new URI("hdfs://192.168.42.132:9000"),conf);
+            out = fs.append(new Path("/itemCF/step1_input/UserAction.txt"));
+            out.write(("\n1,1,1").getBytes());
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if(fs != null){
+                fs.close();
+            }
+            if(out != null){
+                out.close();
+            }
+        }
+        System.out.println("===========run end===========");
     }
 
     //es连接测试方法
