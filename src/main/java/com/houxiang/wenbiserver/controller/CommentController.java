@@ -6,6 +6,10 @@ import com.houxiang.wenbiserver.model.Comment;
 import com.houxiang.wenbiserver.model.SimpleUser;
 import com.houxiang.wenbiserver.service.CommentService;
 import com.houxiang.wenbiserver.stateEnum.CommentAddEnum;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.Timestamp;
 import java.util.List;
 

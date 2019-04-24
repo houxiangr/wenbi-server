@@ -254,6 +254,21 @@ public class EssayController {
         }
     }
 
+    //其他增加文章和用户之间评分关系的接口
+    @ResponseBody
+    @RequestMapping(value="/appendAction",produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
+    public CommonMessage otherAppendUserAction(HttpSession httpSession,HttpServletRequest request) throws IOException, URISyntaxException {
+        SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
+        if(userData == null){
+            return new CommonMessage(false,"用户未登录");
+        }
+        String essayId = request.getParameter("essayId");
+        String score = request.getParameter("score");
+        appendUserAction(userData.getUserId(),Integer.valueOf(essayId),Integer.valueOf(score));
+        return new CommonMessage(true,"增加成功");
+    }
+
+
     //添加文章到ES数据库中
     private ResponseEntity<String> AddEssayToEs(Esessay esessay) throws IOException {
         Request request = new Request("POST","/essaydata/essay/"+esessay.getId());
