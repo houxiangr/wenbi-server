@@ -32,6 +32,11 @@
         insert user_collect_essay (user_id,essay_id)values(#{userId,jdbcType=INTEGER},#{essayId,jdbcType=INTEGER})
     </insert>
 
+    <!--public int cancelCollectEssay(@Param("essayId") int essayId,@Param("userId") int userId);-->
+    <delete id="cancelCollectEssay">
+        delete from user_collect_essay where user_id = #{userId,jdbcType=INTEGER} and essay_id = #{essayId,jdbcType=INTEGER}
+    </delete>
+
     <!--List<Essay> getCollectEssayByUserId(int userId);-->
     <select id="getCollectEssayByUserId" resultType="com.houxiang.wenbiserver.model.Essay">
         select es.essay_id,es.essay_title,es.essay_date,es.essay_cover from user_collect_essay as uses join essay as es

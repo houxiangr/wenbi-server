@@ -19,6 +19,8 @@ public interface EssayMapper {
     //收藏文章
     public int collectEssay(@Param("essayId") int essayId,@Param("userId") int userId);
 
+    public int cancelCollectEssay(@Param("essayId") int essayId,@Param("userId") int userId);
+
     //通过UserId获取用户收藏的文章
     public List<Essay> getCollectEssayByUserId(@Param("userId")int userId);
 

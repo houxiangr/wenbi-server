@@ -65,6 +65,10 @@ public class EssayService {
         return essayMapper.collectEssay(essayId,userId) == 1;
     }
 
+    public boolean cancelCollectEssay(int essayId,int userId){
+        return essayMapper.cancelCollectEssay(essayId,userId) == 1;
+    }
+
     public List<Essay> getCollectEssayByUserId(Integer userId){
         return essayMapper.getCollectEssayByUserId(userId);
     }
@@ -84,7 +88,9 @@ public class EssayService {
         tenHotEssays.clear();
         List<Essay> essaysHotCount = essayMapper.getHotEssayData();
         Collections.sort(essaysHotCount);
-        tenHotEssays.addAll(essaysHotCount);
+        for(int i=0;i<10;i++){
+            tenHotEssays.add(essaysHotCount.get(i));
+        }
         System.out.println("tenHotEssays init");
     }
 

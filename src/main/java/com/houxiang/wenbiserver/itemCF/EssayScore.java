@@ -1,6 +1,5 @@
 package com.houxiang.wenbiserver.itemCF;
 
-import com.houxiang.wenbiserver.model.Essay;
 
 public class EssayScore implements Comparable<EssayScore> {
     private Integer essayID;

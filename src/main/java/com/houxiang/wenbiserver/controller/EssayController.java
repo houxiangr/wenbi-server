@@ -150,7 +150,7 @@ public class EssayController {
         if(!essayService.addVisitCount(essid)){
             System.out.println("访问计数错误");
         }
-
+        System.out.println(essayService.searchEssayByEssayId(essid,userId));
         return essayService.searchEssayByEssayId(essid,userId);
     }
 
@@ -169,6 +169,27 @@ public class EssayController {
             e.printStackTrace();
         }
         if(essayService.collectEssay(essayId,userData.getUserId())){
+            return new CommonMessage(false, CommentEnum.SUCCESS.getName());
+        }else{
+            return new CommonMessage(false, CommentEnum.FAIL.getName());
+        }
+    }
+
+    //取消文章收藏
+    @ResponseBody
+    @RequestMapping(value="/cancelCollectEssay", produces= {"application/json;charset=UTF-8"}, method = RequestMethod.POST)
+    public CommonMessage cancelCollectEssay(HttpSession httpSession,HttpServletRequest request){
+        int essayId = Integer.parseInt(request.getParameter("essayId"));
+        SimpleUser userData = (SimpleUser) httpSession.getAttribute("userdata");
+        if(userData == null){
+            return new CommonMessage(false, CommentEnum.FAIL.getName());
+        }
+        try{
+            appendUserAction(userData.getUserId(),essayId,-5);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        if(essayService.cancelCollectEssay(essayId,userData.getUserId())){
             return new CommonMessage(false, CommentEnum.SUCCESS.getName());
         }else{
             return new CommonMessage(false, CommentEnum.FAIL.getName());

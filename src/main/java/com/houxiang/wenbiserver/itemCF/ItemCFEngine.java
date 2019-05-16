@@ -5,10 +5,8 @@ import com.houxiang.wenbiserver.itemCF.step2.MR2;
 import com.houxiang.wenbiserver.itemCF.step3.MR3;
 import com.houxiang.wenbiserver.itemCF.step4.MR4;
 import com.houxiang.wenbiserver.itemCF.step5.MR5;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
